@@ -13,6 +13,7 @@ public class Pokemon {
     private String name;
     private String photo;
     private String description;
+    @Enumerated(EnumType.STRING)
     private Type type;
     private int hp;
     private int attack;
