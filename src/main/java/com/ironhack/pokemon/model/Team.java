@@ -1,5 +1,7 @@
 package com.ironhack.pokemon.model;
 
+import com.ironhack.pokemon.controller.dtos.*;
+
 import javax.persistence.*;
 import java.util.*;
 

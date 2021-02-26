@@ -1,5 +1,7 @@
 package com.ironhack.pokemon.model;
 
+import com.ironhack.pokemon.controller.dtos.*;
+
 import javax.persistence.*;
 
 @Entity
@@ -22,7 +24,14 @@ public class Trainer {
         this.photo = photo;
     }
 
-//    Getter and Setters
+    public Trainer(TrainerDTO trainerDTO) {
+        this.id = trainerDTO.getId();
+        this.name = trainerDTO.getName();
+        this.hobby = trainerDTO.getHobby();
+        this.photo = trainerDTO.getPhoto();
+    }
+
+    //    Getter and Setters
     public Long getId() {
         return id;
     }
