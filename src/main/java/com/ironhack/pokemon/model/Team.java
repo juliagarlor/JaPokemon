@@ -9,19 +9,27 @@ public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long teamId;
-    private Long trainerId;
+    @OneToOne
+    @JoinColumn(name = "trainer_id")
+    private Trainer trainer;
+    @ManyToMany
+    @JoinTable(
+            name = "pokemon_in_team",
+            joinColumns = { @JoinColumn(name = "team_id") },
+            inverseJoinColumns = { @JoinColumn(name = "pokedex_id") }
+    )
     private List<Pokemon> pokemonList;
 
 //    Constructor
     public Team() {
     }
 
-    public Team(Long trainerId, List<Pokemon> pokemonList) {
-        this.trainerId = trainerId;
+    public Team(Trainer trainer, List<Pokemon> pokemonList) {
+        this.trainer = trainer;
         this.pokemonList = pokemonList;
     }
 
-//    Getters and Setters
+    //    Getters and Setters
     public Long getTeamId() {
         return teamId;
     }
@@ -30,12 +38,12 @@ public class Team {
         this.teamId = teamId;
     }
 
-    public Long getTrainerId() {
-        return trainerId;
+    public Trainer getTrainer() {
+        return trainer;
     }
 
-    public void setTrainerId(Long trainerId) {
-        this.trainerId = trainerId;
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
     }
 
     public List<Pokemon> getPokemonList() {
