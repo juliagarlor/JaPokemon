@@ -6,5 +6,5 @@ import org.springframework.stereotype.*;
 
 @Repository
 public interface TeamRepository extends JpaRepository<Team, Long> {
-    Pokemon findByPokemonListPokedexId(Long id);
+    Team findByTrainerId(Long id);
 }

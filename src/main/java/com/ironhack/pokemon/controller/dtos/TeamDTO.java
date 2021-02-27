@@ -12,7 +12,11 @@ public class TeamDTO {
     private TrainerDTO trainerDTO;
     private List<Pokemon> pokemonList;
 
+    public TeamDTO() {
+    }
+
     public TeamDTO(Team team) {
+        this.id = team.getTeamId();
         this.trainerDTO = new TrainerDTO(team.getTrainer());
         this.pokemonList = team.getPokemonList();
     }

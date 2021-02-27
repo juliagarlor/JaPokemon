@@ -2,8 +2,10 @@ package com.ironhack.pokemon.service.interfaces;
 
 import com.ironhack.pokemon.controller.dtos.*;
 
+import java.util.*;
+
 public interface ITeamService {
-    TeamDTO createNewTeam(TeamDTO teamDTO);
+    List<TeamDTO> getAllTeams();
     TeamDTO addNewMate(Long teamId, Long pokemonId);
     TeamDTO removeMate(Long teamId, Long pokemonId);
 }

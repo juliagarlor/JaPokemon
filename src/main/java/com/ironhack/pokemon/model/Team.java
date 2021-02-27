@@ -18,7 +18,7 @@ public class Team {
     @JoinTable(
             name = "pokemon_in_team",
             joinColumns = { @JoinColumn(name = "team_id") },
-            inverseJoinColumns = { @JoinColumn(name = "pokedex_id") }
+            inverseJoinColumns = { @JoinColumn(name = "pokemon_id") }
     )
     private List<Pokemon> pokemonList;
 
