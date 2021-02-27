@@ -9,4 +9,5 @@ public interface ITrainerController {
     TrainerDTO createNewTrainer(TrainerDTO trainerDTO);
     TrainerDTO getTrainerById(Long id);
     List<TrainerDTO> getAllTrainers();
+    void removeTrainer(Long id);
 }

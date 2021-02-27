@@ -9,6 +9,9 @@ public class TrainerDTO {
     private String hobby;
     private String photo;
 
+    public TrainerDTO() {
+    }
+
     public TrainerDTO(Trainer trainer) {
         this.id = trainer.getId();
         this.name = trainer.getName();

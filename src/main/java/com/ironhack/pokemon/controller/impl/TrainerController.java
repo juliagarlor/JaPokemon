@@ -16,7 +16,7 @@ public class TrainerController implements ITrainerController {
     @Autowired
     private ITrainerService iTrainerService;
 
-//    ruta para registrar un entrenador
+//    create a trainer and automatically create its team
     @PostMapping("/trainer")
     @ResponseStatus(HttpStatus.CREATED)
     public TrainerDTO createNewTrainer(@RequestBody TrainerDTO trainerDTO){
@@ -37,6 +37,9 @@ public class TrainerController implements ITrainerController {
         return iTrainerService.getTrainerById(id);
     }
 
-    //ruta para borrar trainer y al mismo tiempo borrar el equipo
-
+//    Delete a trainer and automatically delete its team
+    @DeleteMapping("/trainer/{id}")
+    public void removeTrainer(@PathVariable Long id){
+        iTrainerService.removeTrainer(id);
+    }
 }

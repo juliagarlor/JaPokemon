@@ -7,32 +7,32 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.*;
+
 @RestController
 public class TeamController implements ITeamController {
 
     @Autowired
     private ITeamService teamService;
 
-//    ruta para crear un equipo
-    @PostMapping("/team")
-    @ResponseStatus(HttpStatus.CREATED)
-    public TeamDTO createNewTeam(@RequestBody TeamDTO teamDTO){
-        return teamService.createNewTeam(teamDTO);
+//    get all teams with the whole information about its trainers and pokemons
+    @GetMapping("/teams")
+    @ResponseStatus(HttpStatus.OK)
+    public List<TeamDTO> getAllTeams(){
+        return teamService.getAllTeams();
     }
 
-//    Ruta para incluir un pokemon en un equipo
+//    add a new pokemon to the team
     @PatchMapping("/add/{teamId}/team-mate")
     @ResponseStatus(HttpStatus.OK)
     public TeamDTO addNewMate(@PathVariable Long teamId, @RequestBody Long pokemonId){
         return teamService.addNewMate(teamId, pokemonId);
     }
 
-//    Ruta para borrar un pokemon de un equipo
+//    remove a team mate from the team
     @PatchMapping("/remove/{teamId}/team-mate")
     @ResponseStatus(HttpStatus.OK)
     public TeamDTO removeMate(@PathVariable Long teamId, @RequestBody Long pokemonId){
         return teamService.removeMate(teamId, pokemonId);
     }
-
-
 }

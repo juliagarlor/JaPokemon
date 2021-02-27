@@ -8,6 +8,8 @@ import javax.persistence.*;
 public class Pokemon {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Long pokedexId;
 
 //    Constructor
@@ -20,6 +22,15 @@ public class Pokemon {
     }
 
 //    Getters and Setter
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getPokedexId() {
         return pokedexId;
