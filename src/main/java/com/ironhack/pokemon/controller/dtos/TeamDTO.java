@@ -9,11 +9,11 @@ public class TeamDTO {
 
     private Long id;
     @NotNull
-    private Long trainerId;
+    private TrainerDTO trainerDTO;
     private List<Pokemon> pokemonList;
 
     public TeamDTO(Team team) {
-        this.trainerId = team.getTrainer().getId();
+        this.trainerDTO = new TrainerDTO(team.getTrainer());
         this.pokemonList = team.getPokemonList();
     }
 
@@ -25,12 +25,12 @@ public class TeamDTO {
         this.id = id;
     }
 
-    public Long getTrainerId() {
-        return trainerId;
+    public TrainerDTO getTrainerDTO() {
+        return trainerDTO;
     }
 
-    public void setTrainerId(Long trainerId) {
-        this.trainerId = trainerId;
+    public void setTrainerDTO(TrainerDTO trainerDTO) {
+        this.trainerDTO = trainerDTO;
     }
 
     public List<Pokemon> getPokemonList() {

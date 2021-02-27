@@ -26,4 +26,13 @@ public class TeamController implements ITeamController {
     public TeamDTO addNewMate(@PathVariable Long teamId, @RequestBody Long pokemonId){
         return teamService.addNewMate(teamId, pokemonId);
     }
+
+//    Ruta para borrar un pokemon de un equipo
+    @PatchMapping("/remove/{teamId}/team-mate")
+    @ResponseStatus(HttpStatus.OK)
+    public TeamDTO removeMate(@PathVariable Long teamId, @RequestBody Long pokemonId){
+        return teamService.removeMate(teamId, pokemonId);
+    }
+
+
 }

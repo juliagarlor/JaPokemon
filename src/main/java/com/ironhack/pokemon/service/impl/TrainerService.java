@@ -32,4 +32,8 @@ public class TrainerService implements ITrainerService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not a trainer with id " + id);
         }
     }
+
+    public List<TrainerDTO> getAllTrainers() {
+        return null;
+    }
 }

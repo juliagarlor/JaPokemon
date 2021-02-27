@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.*;
+
 @RestController
 public class TrainerController implements ITrainerController {
 
@@ -22,9 +24,13 @@ public class TrainerController implements ITrainerController {
     }
 
 //    get all trainers
+    @GetMapping("/trainers")
+    @ResponseStatus(HttpStatus.OK)
+    public List<TrainerDTO> getAllTrainers(){
+        return iTrainerService.getAllTrainers();
+    }
 
-
-//    get trainers by id
+//    get trainers by id. No sé si vamos a necesitar esta, pero si no, al final revisamos y limpiamos
     @GetMapping("/trainer/{id}")
     @ResponseStatus(HttpStatus.OK)
     public TrainerDTO getTrainerById(@PathVariable Long id){

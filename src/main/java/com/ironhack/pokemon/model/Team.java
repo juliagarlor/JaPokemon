@@ -31,6 +31,10 @@ public class Team {
         this.pokemonList = pokemonList;
     }
 
+    public Team(TeamDTO teamDTO){
+        this(new Trainer(teamDTO.getTrainerDTO()), teamDTO.getPokemonList());
+    }
+
     //    Getters and Setters
     public Long getTeamId() {
         return teamId;
