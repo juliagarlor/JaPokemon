@@ -34,29 +34,110 @@ INSERT INTO trainer(hobby, `name`, photo) VALUES
 ('ver Pokemon', 'Aliany', 'aliany.png'),
 ('borrar tatuajes', 'Carolina', 'carolina.png'),
 ('recomendar series', 'Antonio', 'antonio.png'),
-('comprar y resolver cubos de rubik', 'Rubén', 'ruben.png');
+('comprar y resolver cubos de rubik', 'Rubén', 'ruben.png'),
+('vaguear', 'julia', 'julia.png');
 
 INSERT INTO pokemon(pokedex_id) VALUES
+-- magikarp, 1
 (129),
-(129),
-(129),
-(129),
-(129),
-(129),
-(129)
+-- kadabra, 2
+(64),
+-- articuno, 3
+(144),
+-- charizard, 4
+(6),
+-- zapdos, 5
+(145),
+-- gyarados, 6
+(130),
+-- farfetch'd, 7
+(83),
+-- dugtrio, 8
+(51),
+
+-- charmander, 9
+(4),
+-- pikachu, 10
+(25),
+-- ninetales, 11
+(38),
+-- psyduck, 12
+(54),
+-- ekans, 13
+(23),
+-- nidoran, 14
+(29),
+
+-- chandelure, 15
+(609),
+-- rotom, 16
+(479),
+-- honchcrow, 17
+(430),
+-- banette, 17
+(354),
+-- drifloon, 19
+(425),
+-- umbreon, 20
+(197),
+
+-- ditto, 21
+(132),
+-- meowth, 22
+(52),
+-- snorlax, 23
+(143),
+-- bulbasur, 24
+(1),
+-- magneton, 25
+(82),
+-- mew, 26
+(151),
+-- haunter, 27
+(93)
 ;
 
 INSERT INTO team(trainer_id) VALUES
 (1),
 (2),
 (3),
-(4);
+(4),
+(5);
 
 INSERT INTO pokemon_in_team(team_id, pokemon_id) VALUES
+-- Aliany
 (1, 1),
-(1, 2),
-(2, 3),
-(3, 4),
+(1, 9),
+(1, 21),
+(1, 15),
+-- Carolina
+(2, 9),
+(2, 10),
+(2, 11),
+(2, 12),
+(2, 13),
+(2, 14),
+-- Antonio
+(3, 21),
+(3, 22),
+(3, 23),
+(3, 24),
+(3, 25),
+(3, 26),
+(3, 27),
+-- Rubén
+(4, 2),
+(4, 3),
+(4, 4),
 (4, 5),
 (4, 6),
-(4, 7);
+(4, 7),
+(4, 8),
+-- julia
+(5, 15),
+(5, 16),
+(5, 17),
+(5, 18),
+(5, 19),
+(5, 20)
+;
