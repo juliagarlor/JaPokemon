@@ -1,0 +1,157 @@
+.pokedex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: top;
+}
+
+.list-side {
+    flex: 1;
+}
+.info-side {
+    flex: 3;
+    border:  1px solid #dee2e6;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dee2e6;
+}
+
+.selected {
+    background-color: #dee2e6;
+}
+
+li:hover {
+    cursor: pointer;
+}
+.final-row {
+    display: block;
+    padding: 0 10px;
+}
+.left-arrow {
+    float: left;
+}
+.right-arrow {
+    float: right;
+}
+
+.sprite {
+    width: 50px;
+    margin-right: 5px;
+}
+.artwork {
+    width: 50%;
+}
+
+.pokemon-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pokemon-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+}
+.info-side-left {
+    padding: 25px;
+    flex: 1;
+}
+.info-side-right {
+    padding: 25px;
+    flex: 1;
+}
+
+
+
+
+.poketype{
+    border-radius: 0.4em;
+    width: fit-content;
+    padding: 0 10px;
+    margin: 0 5px;
+    color: white;
+    text-transform: uppercase; 
+}
+
+.normal{
+    background-color: #AAB09F;
+}
+
+.fighting{
+    background-color: #CB5F48;
+}
+
+.flying{
+    background-color: #7DA6DE;
+}
+
+.poison{
+    background-color: #B468B7;
+}
+
+.ground{
+    background-color: #CC9F4F;
+}
+
+.rock{
+    background-color: #B2A061;
+}
+
+.bug{
+    background-color: #D8E030;
+}
+
+.ghost{
+    background-color: #846AB6;
+}
+
+.steel{
+    background-color: #89A1B0;
+}
+
+.fire{
+    background-color: #EA7A3C;
+}
+
+.water{
+    background-color: #539AE2;
+}
+
+.grass{
+    background-color: #71C558;
+}
+
+.electric{
+    background-color: #E5C531;
+}
+
+.psychic{
+    background-color: #E5709B;
+}
+
+.ice{
+    background-color: #70CBD4;
+}
+
+.dragon{
+    background-color: #6A7BAF;
+}
+
+.dark{
+    background-color: #736C75;
+}
+
+.fairy{
+    background-color: #E397D1;
+}
