@@ -1,2 +1,16 @@
-<p>trainer works!</p>
+
+<form (ngSubmit)="createTrainer()">
+	<input type="text" name="name" placeholder="Name" [(ngModel)]="name">
+
+	<input type="number" name="age" placeholder="Age" [(ngModel)]="age">
+
+	<input type="text" name="hobby" placeholder="Hobby" [(ngModel)]="hobby">
+
+	<input type="text" name="photo" placeholder="Photo" [(ngModel)]="photo">
+
+	<button type="submit">Create Trainer</button>
+</form>
+
+{{name}} {{age}} {{hobby}} {{photo}}
+
 <app-trainer-cart></app-trainer-cart>

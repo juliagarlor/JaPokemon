@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerComponent implements OnInit {
 
+  name:string = "";
+  age: number | undefined;
+  hobby: string =  "";
+  photo: string = "";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  createTrainer(): void {
+
   }
 
 }
