@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE, RequestMethod.PUT, RequestMethod.PATCH})
 public class TeamController implements ITeamController {
 
     @Autowired
@@ -20,6 +21,12 @@ public class TeamController implements ITeamController {
     @ResponseStatus(HttpStatus.OK)
     public List<TeamDTO> getAllTeams(){
         return teamService.getAllTeams();
+    }
+
+    @GetMapping("/team/trainer/{name}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<TeamDTO> getTeamsByName(@PathVariable String name){
+        return teamService.checkTeamByName(name);
     }
 
 //    add a new pokemon to the team

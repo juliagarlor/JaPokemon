@@ -43,6 +43,8 @@ public class TrainerService implements ITrainerService {
         }
     }
 
+
+
     public List<TrainerDTO> getAllTrainers() {
         List<Trainer> trainers = trainerRepository.findAll();
         List<TrainerDTO> output = new ArrayList<>();
