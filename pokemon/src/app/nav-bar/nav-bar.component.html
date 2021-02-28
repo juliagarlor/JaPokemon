@@ -24,30 +24,28 @@
                               <div class="card-header"> 
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" id="pokedex-tab" data-toggle="tab" href="#pokedex" role="tab" aria-controls="pokedex" aria-selected="true">Pokedex</a>
+                                        <a class="nav-link active" id="pokedex-tab" data-toggle="tab" href="#"
+                                        routerLink="pokedex"
+                                        routerLinkActive="active"
+                                        role="tab" aria-controls="pokedex" aria-selected="true">Pokedex</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#trainer" role="tab" aria-controls="trainer"
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#"
+                                        routerLink="trainer"
+                                        routerLinkActive="active"
+                                        role="tab" aria-controls="trainer"
                                             aria-selected="false">Trainer</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#team" role="tab" aria-controls="team"
+                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#"
+                                        routerLink="team"
+                                        routerLinkActive="active"
+                                        role="tab" aria-controls="team"
                                             aria-selected="false">Team</a>
                                     </li>
                                 </ul>
                                 
                               </div>
-                               <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="pokedex" role="tabpanel" aria-labelledby="pokedex-tab">
-                                        <app-pokedex></app-pokedex>
-                                    </div>
-                                    <div class="tab-pane fade" id="trainer" role="tabpanel" aria-labelledby="trainer-tab">
-                                        <app-trainer></app-trainer>
-                                    </div>
-                                    <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
-                                        <app-team></app-team>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
