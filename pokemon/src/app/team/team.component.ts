@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TeamComponent implements OnInit {
 
   pokemonList: string[] = ["picachu"];
+  trainerList: string[] = ["Ana", "Juan", "Pepe"]
 
   constructor() { }
 
