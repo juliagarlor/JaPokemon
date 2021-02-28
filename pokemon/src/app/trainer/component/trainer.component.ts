@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamService } from '../sevices/team.service';
 
 @Component({
   selector: 'app-trainer',
@@ -12,13 +13,25 @@ export class TrainerComponent implements OnInit {
   hobby: string =  "";
   photo: string = "";
 
-  constructor() { }
+  constructor(
+    private teamService: TeamService
+    ) { }
 
   ngOnInit(): void {
+    this.getTrainerList();
   }
 
   createTrainer(): void {
 
+  }
+
+  getTrainerList(): void {
+
+    this.teamService.getTrainers()
+    .subscribe( resp => {
+      
+      console.log(resp);
+    } );
   }
 
 }
