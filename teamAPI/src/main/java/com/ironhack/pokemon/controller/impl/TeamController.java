@@ -22,6 +22,12 @@ public class TeamController implements ITeamController {
         return teamService.getAllTeams();
     }
 
+    @GetMapping("/team/trainer/{name}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<TeamDTO> getTeamsByName(@PathVariable String name){
+        return teamService.checkTeamByName(name);
+    }
+
 //    add a new pokemon to the team
     @PatchMapping("/add/{teamId}/team-mate")
     @ResponseStatus(HttpStatus.OK)

@@ -74,4 +74,18 @@ public class TeamService implements ITeamService {
         }
         return team.get();
     }
+
+    public List<TeamDTO> checkTeamByName(String name) {
+        List<Team> teamList = teamRepository.findByTrainerName(name);
+        List<TeamDTO> teamDTOList = new ArrayList<>();
+
+        if (teamList.size() != 0){
+            for(Team team: teamList){
+                teamDTOList.add(new TeamDTO(team));
+            }
+        }else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not a trainer with name: " + name);
+        }
+        return teamDTOList;
+    }
 }
