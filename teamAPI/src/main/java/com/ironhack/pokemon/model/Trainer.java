@@ -11,6 +11,7 @@ public class Trainer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private Integer age;
     private String hobby;
     private String photo;
 
@@ -18,8 +19,9 @@ public class Trainer {
     public Trainer() {
     }
 
-    public Trainer(String name, String hobby, String photo) {
+    public Trainer(String name, Integer age, String hobby, String photo) {
         this.name = name;
+        this.age = age;
         this.hobby = hobby;
         this.photo = photo;
     }
@@ -27,6 +29,7 @@ public class Trainer {
     public Trainer(TrainerDTO trainerDTO) {
         this.id = trainerDTO.getId();
         this.name = trainerDTO.getName();
+        this.age = trainerDTO.getAge();
         this.hobby = trainerDTO.getHobby();
         this.photo = trainerDTO.getPhoto();
     }
@@ -46,6 +49,14 @@ public class Trainer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Integer getAge() {
+        return this.age;
     }
 
     public String getHobby() {

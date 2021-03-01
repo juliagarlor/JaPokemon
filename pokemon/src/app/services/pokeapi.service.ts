@@ -14,6 +14,13 @@ export class PokeapiService {
   getPokemon(id: number): Observable<PokemonFromApi> {
     return this.http.get<PokemonFromApi>('https://pokeapi.co/api/v2/pokemon/'+id);
   }
+  getPokemonByName(name: string): Observable<PokemonFromApi> {
+    return this.http.get<PokemonFromApi>('https://pokeapi.co/api/v2/pokemon/'+name);
+  }
+  // /add/{teamId}/team-mate
+  addPokemon(teamId: number, pokedexId: number): Observable<any> {
+    return this.http.put<any>('http://localhost:8080/add/' + teamId + '/team-mate', pokedexId);
+  }
 }
 
 interface PokemonFromApi {

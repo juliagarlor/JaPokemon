@@ -1,0 +1,142 @@
+.default-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.card {
+    margin: 0 5px;
+    width: 225px;
+    border-radius: 5px;
+}
+
+.selected {
+    background-color: #dee2e6;
+}
+
+.poketype{
+    border-radius: 0.4em;
+    width: fit-content;
+    padding: 0 10px;
+    margin: 0 5px;
+    color: white;
+    text-transform: uppercase;
+}
+.poketype:hover {
+    cursor:help;
+}
+
+.normal{
+    background-color: #AAB09F;
+}
+
+.fighting{
+    background-color: #CB5F48;
+}
+
+.flying{
+    background-color: #7DA6DE;
+}
+
+.poison{
+    background-color: #B468B7;
+}
+
+.ground{
+    background-color: #CC9F4F;
+}
+
+.rock{
+    background-color: #B2A061;
+}
+
+.bug{
+    background-color: #D8E030;
+}
+
+.ghost{
+    background-color: #846AB6;
+}
+
+.steel{
+    background-color: #89A1B0;
+}
+
+.fire{
+    background-color: #EA7A3C;
+}
+
+.water{
+    background-color: #539AE2;
+}
+
+.grass{
+    background-color: #71C558;
+}
+
+.electric{
+    background-color: #E5C531;
+}
+
+.psychic{
+    background-color: #E5709B;
+}
+
+.ice{
+    background-color: #70CBD4;
+}
+
+.dragon{
+    background-color: #6A7BAF;
+}
+
+.dark{
+    background-color: #736C75;
+}
+
+.fairy{
+    background-color: #E397D1;
+}
+
+
+
+.pokegeneration{
+    border-radius: 0.4em;
+    width: fit-content;
+    padding: 0 10px;
+    margin-bottom: 15px;
+    color: white;
+}
+.pokegeneration:hover {
+    cursor:help;
+}
+.generation1{
+    background: linear-gradient(90deg, red, blue);
+}
+.generation2{
+    background: linear-gradient(90deg, gold, silver);
+}
+.generation3{
+    background: linear-gradient(90deg, red, blue);
+}
+.generation4{
+    background: linear-gradient(90deg, slateblue, plum);
+}
+.generation5{
+    color: black;
+    background: linear-gradient(90deg, gray, white);
+}
+.generation6{
+    background: linear-gradient(90deg, steelblue, maroon);
+}
+.generation7{
+    background: linear-gradient(90deg,orange, HoneyDew);
+}
+.generation8{
+    background: linear-gradient(90deg,lightskyblue,crimson);
+}

@@ -32,7 +32,7 @@ public class Team {
     }
 
     public Team(TeamDTO teamDTO){
-        this(new Trainer(teamDTO.getTrainerDTO()), teamDTO.getPokemonList());
+        this(new Trainer(teamDTO.getTrainer()), teamDTO.getPokemonList());
     }
 
     //    Getters and Setters
