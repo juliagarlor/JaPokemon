@@ -11,7 +11,7 @@ import { PokeapiService } from '../services/pokeapi.service';
 export class PokedexComponent implements OnInit {
 
   pokemonList: Pokemon[] = [];
-  pokemon: Pokemon = new Pokemon(0,"-",["-","-"],0,0,0,0,0,0,[],0,0,"-","-",false);
+  pokemon: Pokemon = new Pokemon(0,"-","-",["-","-"],0,0,0,0,0,0,[],0,0,"-","-",false);
   initialPokemon: number = 1;
 
   constructor(
@@ -32,6 +32,7 @@ export class PokedexComponent implements OnInit {
 
       this.pokemonList.push(new Pokemon(
         dataResult.id,
+        this.calculateGeneration(dataResult.id),
         dataResult.name,
         types,
         dataResult.stats[0].base_stat,
@@ -74,6 +75,26 @@ export class PokedexComponent implements OnInit {
     this.pokemonList=[];
     for (let i = this.initialPokemon; i < this.initialPokemon + 15; i++) {
       this.getPokemon(i);
+    }
+  }
+
+  calculateGeneration(id: number): string {
+    if (id <= 151) {
+      return "I";
+    } else if (id > 151 && id <= 251) {
+      return "II";
+    } else if (id > 251 && id <= 386) {
+      return "III";
+    } else if (id > 386 && id <= 493) {
+      return "IV";
+    } else if (id > 493 && id <= 649) {
+      return "V";
+    } else if (id > 649 && id <= 721) {
+      return "VI";
+    } else if (id > 721 && id <= 809) {
+      return "VII";
+    } else {
+      return "VIII";
     }
   }
 }

@@ -13,7 +13,7 @@
     <div class="info-side">
         <div *ngIf="pokemon.show === true" class="pokemon-view">
             <img src={{pokemon.artwork}} class="artwork" />
-            <p><span class="poketype" *ngFor="let type of pokemon.types" 
+            <p><span class="poketype" *ngFor="let type of pokemon.types; let i = index" 
                         [ngClass]="{'normal':type==='normal', 'fighting':type==='fighting',
                         'flying':type==='flying', 'poison':type==='poison',
                         'ground':type==='ground', 'rock':type==='rock',
@@ -23,9 +23,21 @@
                         'electric':type==='electric', 'psychic':type==='psychic',
                         'ice':type==='ice', 'dragon':type==='dragon',
                         'dark':type==='dark', 'fairy':type==='fairy',
-                        'unknown':type==='unknown', 'shadow':type==='shadow'}">
+                        'unknown':type==='unknown', 'shadow':type==='shadow'}" title="Type {{i+1}}">
                 {{type.toString() }}
             </span></p>
+            <p title="Generation {{pokemon.generation}}"
+                        [ngClass]="{'pokegeneration': true,
+                        'generation1':pokemon.generation==='I',
+                        'generation2':pokemon.generation==='II',
+                        'generation3':pokemon.generation==='III',
+                        'generation4':pokemon.generation==='IV',
+                        'generation5':pokemon.generation==='V',
+                        'generation6':pokemon.generation==='VI',
+                        'generation7':pokemon.generation==='VII',
+                        'generation8':pokemon.generation==='VIII'}">
+                {{pokemon.generation}}
+            </p>
             <h3>{{pokemon.pokedexEntry}}. {{pokemon.name.toLocaleUpperCase()}}</h3>
             <div class="pokemon-info">
                 <div class="info-side-left">

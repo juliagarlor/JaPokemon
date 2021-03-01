@@ -1,6 +1,7 @@
 export class Pokemon {
     constructor(
         private _pokedexEntry: number,
+        private _generation: string,
         private _name: string,
         private _types: string[],
         private _hp: number,
@@ -19,6 +20,9 @@ export class Pokemon {
 
       get pokedexEntry(): number {
         return this._pokedexEntry;
+      }
+      get generation(): string {
+        return this._generation;
       }
       get name(): string {
           return this._name;
@@ -65,6 +69,9 @@ export class Pokemon {
 
       set pokedexEntry(pokedexEntry: number) {
         this._pokedexEntry = pokedexEntry;
+      }
+      set generation(generation: string) {
+        this._generation = generation;
       }
       set name(name: string) {
         this._name = name;
