@@ -28,9 +28,9 @@ export class TrainerComponent implements OnInit {
   getTrainerList(): void {
 
     this.teamService.getTrainers()
-    .subscribe( resp => {
-      
+    .subscribe((resp: any) => {
       console.log(resp);
+
     } );
   }
 
