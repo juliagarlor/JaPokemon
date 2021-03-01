@@ -1,6 +1,20 @@
-  <h1 class="display-4 text-center">Pokemon</h1>
-  <hr class="my-4 text-center">
-  
-  <app-nav-bar></app-nav-bar>
-  
-  
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/pokedex">
+    <img src="assets/images/logo.png" width="120px" class="img-responsive" alt="Pokemon Logo">
+  </a>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#" routerLink="pokedex" routerLinkActive="active" role="tab" aria-controls="pokedex" aria-selected="true">Pokedex</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#" routerLink="trainer" routerLinkActive="active"
+          role="tab" aria-controls="trainer" aria-selected="false">Trainer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#" routerLink="team" routerLinkActive="active" role="tab" aria-controls="team" aria-selected="false">Team</a>
+      </li>
+    </ul>
+  </div>
+</nav>

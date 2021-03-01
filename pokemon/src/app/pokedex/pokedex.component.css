@@ -12,7 +12,7 @@
     flex: 3;
     border:  1px solid #dee2e6;
 }
-ul {
+.pokedex .list-side ul {
     list-style: none;
     padding: 0;
     width: 100%;
@@ -22,6 +22,7 @@ li {
     display: flex;
     align-items: center;
     border: 1px solid #dee2e6;
+    padding-left: 10px;
 }
 
 .selected {

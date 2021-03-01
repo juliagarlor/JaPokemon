@@ -1,7 +1,7 @@
 <div class="pokedex">
     <div class="list-side">
         <ul>
-            <li *ngFor="let pokemon of pokemonList" (click)="swapShow(pokemon)" [ngClass]="{'selected': pokemon.show === true}">
+            <li *ngFor="let pokemon of pokemonList" (click)="swapShow(pokemon)" [ngClass]="{'selected': pokemon.show}">
                 <img src={{pokemon.sprite}} class="sprite" /> {{pokemon.pokedexEntry}}. {{capitalize(pokemon.name)}} 
             </li>
             <li class="final-row">
