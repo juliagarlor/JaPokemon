@@ -1,53 +1,53 @@
 export class Trainer {
 
     constructor(
-        _id: number,
-        _name: string,
-        _age: number,
-        _hobby: string,
-        _photo: string
+        private _id: number,
+        private _name: string,
+        private _age: number,
+        private _hobby: string,
+        private _photo: string
     ){}
 
     
     public get id() : number {
-        return this.id;
+        return this._id;
     }
     
     public get name() : string {
-        return this.name;
+        return this._name;
     }
     
     public get age() : number {
-        return this.age;
+        return this._age;
     }
    
     public get hobby() : string {
-        return this.hobby;
+        return this._hobby;
     }
     
     public get photo() : string {
-        return this.photo;
+        return this._photo;
     }
 
     
     public set id(v : number) {
-        this.id = v;
+        this._id = v;
     }
     
     public set name(v : string) {
-        this.name = v;
+        this._name = v;
     }
     
     public set age(v : number) {
-        this.age = v;
+        this._age = v;
     }
     
     public set hobby(v : string) {
-        this.hobby = v;
+        this._hobby = v;
     }
     
     public set photo(v : string) {
-        this.photo = v;
+        this._photo = v;
     }
 
 

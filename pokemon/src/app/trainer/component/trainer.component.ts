@@ -1,5 +1,7 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { TeamService } from '../sevices/team.service';
+import { TrainerDTO } from '../classes/trainer-dto';
+import { TrainerService } from '../sevices/trainer.service';
 
 @Component({
   selector: 'app-trainer',
@@ -9,12 +11,12 @@ import { TeamService } from '../sevices/team.service';
 export class TrainerComponent implements OnInit {
 
   name:string = "";
-  age: number | undefined;
+  age: number = 0;
   hobby: string =  "";
   photo: string = "";
 
   constructor(
-    private teamService: TeamService
+    private trainerService: TrainerService
     ) { }
 
   ngOnInit(): void {
@@ -22,13 +24,18 @@ export class TrainerComponent implements OnInit {
   }
 
   createTrainer(): void {
-
+    const trainerDTO = new TrainerDTO(this.name, this.age, this.hobby, this.photo);
+    console.log(trainerDTO);
+    this.trainerService.createTrainer(trainerDTO).subscribe(dataResult => {
+      this.getTrainerList()
+    });
   }
 
   getTrainerList(): void {
 
-    this.teamService.getTrainers()
-    .subscribe((resp: any) => {
+    this.trainerService.getTrainers()
+    .subscribe( resp => {
+
       console.log(resp);
 
     } );

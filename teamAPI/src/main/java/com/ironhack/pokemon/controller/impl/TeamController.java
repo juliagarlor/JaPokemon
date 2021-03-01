@@ -30,7 +30,7 @@ public class TeamController implements ITeamController {
     }
 
 //    add a new pokemon to the team
-    @PatchMapping("/add/{teamId}/team-mate")
+    @PutMapping("/add/{teamId}/team-mate")
     @ResponseStatus(HttpStatus.OK)
     public TeamDTO addNewMate(@PathVariable Long teamId, @RequestBody Long pokemonId){
         return teamService.addNewMate(teamId, pokemonId);

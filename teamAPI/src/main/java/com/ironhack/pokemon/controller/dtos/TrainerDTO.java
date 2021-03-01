@@ -6,6 +6,7 @@ public class TrainerDTO {
 
     private Long id;
     private String name;
+    private Integer age;
     private String hobby;
     private String photo;
 
@@ -15,6 +16,7 @@ public class TrainerDTO {
     public TrainerDTO(Trainer trainer) {
         this.id = trainer.getId();
         this.name = trainer.getName();
+        this.age = trainer.getAge();
         this.hobby = trainer.getHobby();
         this.photo = trainer.getPhoto();
     }
@@ -33,6 +35,14 @@ public class TrainerDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getHobby() {

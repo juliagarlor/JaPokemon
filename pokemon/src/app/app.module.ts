@@ -6,23 +6,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { TrainerComponent } from './trainer/component/trainer.component';
 import { TrainerCartComponent } from './trainer-cart/trainer-cart.component';
 import { TeamComponent } from './team/team.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
+import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavBarComponent,
     FooterComponent,
     TrainerComponent,
     TrainerCartComponent,
     TeamComponent,
-    PokedexComponent
+    PokedexComponent,
+    PokemonCardComponent
   ],
   imports: [
     BrowserModule,

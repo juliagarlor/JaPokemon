@@ -25,6 +25,7 @@ public class TrainerController implements ITrainerController {
     }
 
 //    get all trainers
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/trainers")
     @ResponseStatus(HttpStatus.OK)
     public List<TrainerDTO> getAllTrainers(){
