@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6 offset-4">
-      <form class="form-inline">
+      <form class="form-inline" #form="ngForm" (ngSubmit)="addPokemon(pokemonToAdd)">
         <div class="form-group mb-2">
           <select class="custom-select" required>
             <option disabled selected>Select trainer</option>
@@ -11,7 +11,7 @@
         <div class="form-group mx-sm-3 mb-2">
           <input class="form-control" name="pokemon" type="add" placeholder="Pokemon name" aria-label="Add" required [(ngModel)]="pokemonToAdd">
         </div>
-        <button type="submit" class="btn btn-outline-success mb-2" (click)="addPokemon(pokemonToAdd)">Add</button>
+        <button [disabled]="form.invalid" type="submit" class="btn btn-outline-success mb-2">Add</button>
       </form>
     </div>
   </div>
