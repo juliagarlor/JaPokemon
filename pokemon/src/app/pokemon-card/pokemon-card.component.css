@@ -1,3 +1,12 @@
+.x {
+    align-self: flex-end;
+    margin: 5px 10px;
+    position: absolute;
+}
+.x:hover {
+    cursor: pointer;
+}
+
 .default-view {
     display: flex;
     flex-direction: column;
