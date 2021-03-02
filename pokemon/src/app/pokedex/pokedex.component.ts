@@ -32,7 +32,7 @@ export class PokedexComponent implements OnInit {
 
       this.pokemonList.push(new Pokemon(
         dataResult.id,
-        this.calculateGeneration(dataResult.id),
+        PokedexComponent.calculateGeneration(dataResult.id),
         dataResult.name,
         types,
         dataResult.stats[0].base_stat,
@@ -78,7 +78,7 @@ export class PokedexComponent implements OnInit {
     }
   }
 
-  calculateGeneration(id: number): string {
+  static calculateGeneration(id: number): string {
     if (id <= 151) {
       return "I";
     } else if (id > 151 && id <= 251) {

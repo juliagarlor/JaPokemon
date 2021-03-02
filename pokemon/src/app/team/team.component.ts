@@ -35,8 +35,43 @@ export class TeamComponent implements OnInit {
 
   getTeams(){
     this.teamService.getTeams().subscribe(dataResult => {
+      console.log(dataResult);
       this.teamList=dataResult;
     })
+  
+  //   let trainer: Trainer = new Trainer(1, "Pepe", 75, "Heráldica", "pepe.jpg");
+  //   this.teamList=[
+  //     {
+  //         id: 1,
+  //         trainer: this.trainer,
+  //         pokemonList: [
+  //             {
+  //                 id: 1,
+  //                 pokedexId: 129
+  //             },
+  //             {
+  //                 id: 9,
+  //                 pokedexId: 4
+  //             },
+  //             {
+  //                 id: 21,
+  //                 pokedexId: 132
+  //             },
+  //             {
+  //                 id: 15,
+  //                 pokedexId: 609
+  //             },
+  //             {
+  //                 id: 28,
+  //                 pokedexId: 172
+  //             },
+  //             {
+  //                 id: 29,
+  //                 pokedexId: 448
+  //             }
+  //         ]
+  //     }
+  // ]
   }
 
   showPokemons(team: Team) {
@@ -48,9 +83,13 @@ export class TeamComponent implements OnInit {
     let pokemonId: number = 0;
     this.pokeapiService.getPokemonByName(pokemonToAdd).subscribe(dataResult => {
       pokemonId = dataResult.id;
+
+      this.team.pokemonList.push(this.team.pokemonList.length , pokemonId);
+
       this.pokeapiService.addPokemon(this.team.id, pokemonId).subscribe(dataResult => {
-        this.getTeams();
       });
-    })
+      this.getTeams();
+    });
+
   }
 }

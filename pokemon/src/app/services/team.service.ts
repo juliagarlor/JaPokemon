@@ -8,7 +8,7 @@ import { Team } from '../models/team';
 })
 export class TeamService {
 
-  private url: string = "http://localhost:8080/";
+  private url: string = "http://localhost:8080";
 
   constructor(
     private http: HttpClient,
