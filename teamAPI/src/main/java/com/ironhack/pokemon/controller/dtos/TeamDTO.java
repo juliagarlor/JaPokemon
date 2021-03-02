@@ -1,15 +1,17 @@
 package com.ironhack.pokemon.controller.dtos;
 
 import com.ironhack.pokemon.model.*;
-import com.sun.istack.*;
 
+import javax.validation.*;
+import javax.validation.constraints.*;
 import java.util.*;
 
 public class TeamDTO {
 
     private Long id;
-    @NotNull
+    @Valid
     private TrainerDTO trainer;
+    @NotNull(message = "A team must have a pokemon list")
     private List<Pokemon> pokemonList;
 
     public TeamDTO() {

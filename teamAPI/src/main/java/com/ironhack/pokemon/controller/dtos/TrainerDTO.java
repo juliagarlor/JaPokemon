@@ -2,12 +2,18 @@ package com.ironhack.pokemon.controller.dtos;
 
 import com.ironhack.pokemon.model.*;
 
+import javax.validation.constraints.*;
+
 public class TrainerDTO {
 
     private Long id;
+    @NotEmpty(message = "A trainer must have a name")
     private String name;
+    @NotNull(message = "Look to your ID")
     private Integer age;
+    @NotEmpty(message = "Are you really that boring?")
     private String hobby;
+    @NotEmpty(message = "Go to facebook and pick your best face")
     private String photo;
 
     public TrainerDTO() {
