@@ -82,11 +82,12 @@ export class TeamComponent implements OnInit {
     pokemonToAdd=pokemonToAdd.toLowerCase();
     let pokemonId: number = 0;
     this.pokeapiService.getPokemonByName(pokemonToAdd).subscribe(dataResult => {
-      pokemonId = dataResult.id;
-
-      this.team.pokemonList.push(this.team.pokemonList.length , pokemonId);
-
-      this.pokeapiService.addPokemon(this.team.id, pokemonId).subscribe(dataResult => {
+      let pokedexId = dataResult.id;
+      let id = this.team.pokemonList[this.team.pokemonList.length-1].id +1;
+      let pokemon = {id, pokedexId};
+      this.team.pokemonList.push(pokemon);
+      this.getTeams();
+      this.pokeapiService.addPokemon(this.team.id, pokedexId).subscribe(dataResult => {
       });
       this.getTeams();
     });
