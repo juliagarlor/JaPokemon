@@ -1,8 +1,10 @@
 package com.ironhack.pokemon.model;
 
 import com.ironhack.pokemon.controller.dtos.*;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.util.*;
 
 @Entity
@@ -14,6 +16,7 @@ public class Team {
     @OneToOne
     @JoinColumn(name = "trainer_id")
     private Trainer trainer;
+    @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany
     @JoinTable(
             name = "pokemon_in_team",
