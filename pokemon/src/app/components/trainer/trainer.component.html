@@ -26,7 +26,7 @@
 		
 
 			<div class="team">
-				<app-trainer-cart *ngFor="let trainer of trainerList" [trainer] = "trainer" class="trainer-margin" (deleteTrainerEvent) = "deleteTrainer($event)"></app-trainer-cart>
+				<app-trainer-cart *ngFor="let trainer of trainerList; let index = index" [trainer] = "trainer" class="trainer-margin" (deleteTrainerEvent) = "deleteTrainer($event, index)"></app-trainer-cart>
 			</div>
 			
 		

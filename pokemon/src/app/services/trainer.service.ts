@@ -23,6 +23,13 @@ export class TrainerService {
      return this.http.get<Trainer[]>( url );
   }
 
+  getTrainerById(id:number): Observable<Trainer[]> {
+
+    const url = `${this.url}trainer${id}`;
+
+     return this.http.get<Trainer[]>( url );
+  }
+
   createTrainer(trainerDTO: TrainerDTO): Observable<TrainerDTO> {
 
     const url = `${this.url}trainer`;

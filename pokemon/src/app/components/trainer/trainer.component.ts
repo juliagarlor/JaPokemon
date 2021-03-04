@@ -43,11 +43,12 @@ export class TrainerComponent implements OnInit {
     } );
   }
 
-  deleteTrainer(id: number): void {
+  deleteTrainer(id: number, index: number): void {
     this.trainerService.deleteTrainer(id)
     .subscribe( resp => {
       console.log(resp);
     })
+    this.trainerList.splice(index, 1);
   }
 
 }
