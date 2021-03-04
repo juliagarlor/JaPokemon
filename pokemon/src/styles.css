@@ -2,6 +2,7 @@
 
 .content {
   padding-top: 70px;
+  padding-bottom: 200px;
 }
 
 .container, .container-fluid {
@@ -22,4 +23,9 @@ form button {
 
 .custom-select {
   min-width: 193px;
+}
+
+html{
+  min-height: 100%;
+  position: relative;
 }
