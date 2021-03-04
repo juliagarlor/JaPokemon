@@ -13,13 +13,15 @@ import { TrainerService } from 'src/app/services/trainer.service';
 export class TrainerComponent implements OnInit {
 
   name:string = "";
-  age: number = 0;
+  age!: number;
   hobby: string =  "";
   photo: string = "";
 
   photoList: string[] = ["chica.gif", "científica.gif", "criadora.gif", "duque.gif", "entrenador-guay.gif", "entrenadora-guay.gif", "guitarrista.gif", "joven.gif", "karateka.gif", "luchadora.gif", "modelo.gif", "montañero.gif", "motorista.gif", "pescador.gif", "policía.gif", "calvo.gif", "arlequín.gif", "ciclista-chico.gif", "ciclista-chica.gif", "marquesa.gif"];
 
   trainerList: Trainer[] = [];
+
+  selectedPhoto: string= '';
 
   constructor(
     private trainerService: TrainerService

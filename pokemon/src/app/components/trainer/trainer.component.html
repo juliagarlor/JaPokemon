@@ -16,9 +16,8 @@
 						<input type="text" class="form-control" name="hobby" placeholder="Hobby" [(ngModel)]="hobby" required>
 					</div>
 					<div class="form-group col-md-6">
-						<select class="form-control" required>
-							<option disabled selected>Photo</option>
-							<option *ngFor="let photo of photoList" (click)="setPhoto(photo)">{{normalize(photo)}}</option>
+						<select class="form-control" required name="selectedPhoto" [(ngModel)]="selectedPhoto" (ngModelChange)="setPhoto($event)">
+							<option [ngValue]="photo" *ngFor="let photo of photoList">{{normalize(photo)}}</option>
 						</select>
 					</div>
 				</div>

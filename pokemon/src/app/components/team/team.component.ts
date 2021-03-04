@@ -17,6 +17,8 @@ export class TeamComponent implements OnInit {
   teamList: {teamId: number, trainerName: string}[] = [];
   pokemonToAdd: string = '';
   teamId: number = 0;
+  
+  selectedTrainer: number = 0;
 
   constructor(
     private teamService: TeamService,
