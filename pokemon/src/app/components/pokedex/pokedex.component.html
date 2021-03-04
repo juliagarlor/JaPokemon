@@ -1,8 +1,9 @@
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 offset-md-3">
 
-      <div class="pokedex" >
+      <div class="pokedex">
         <div class="list-side">
             <ul>
                 <li *ngFor="let pokemon of pokemonList" (click)="swapShow(pokemon)" [ngClass]="{'selected': pokemon.show}">
