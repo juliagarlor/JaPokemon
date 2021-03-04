@@ -1,5 +1,8 @@
-# JaPoKemon
+
+![Alt text](/pokemon/src/assets/logo.png?raw=true "Pokemon")
 ---
+
+# JaPoKemon 
 For this project, we created a Pokémon application, in this application we have 3 sections, Pokedex, Teams and Trainers. In Pokedex we are presented with a paginated list of all the names of the pokemons, and clicking on a name shows a detailed view of the pokedex with an image and statistics.
 In Trainers we can create and eliminate pokemon trainers. In Teams, we can select a trainer and see their pokemon team, add and / or remove pokemons to that team.
 
@@ -66,6 +69,6 @@ DELETE | localhost:8080/trainer/{id} | Delete a trainer and automatically delete
 # Diagrams
 ---
 Case Diagram
-diagrams/diagram-use-case.png
+![Class Diagram](diagrams/diagram-use-case.png)
 ---
 ⌨️ developed with ❤️ by Antonio Navarro, Carolina Siguiri, Julia Garcia, Rubén Navarro, Aliany Crespo 😊
