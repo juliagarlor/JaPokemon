@@ -1,0 +1,12 @@
+<div class="card" (mouseenter)="toggleActive()" (mouseleave)="toggleActive()" [ngClass]="{'selected': isActive}">
+    <div class="default-view">
+        <p class="x" (click) = "delete()">&#x2715;</p>
+        <img src={{trainer.photo}} class="artwork" /> 
+        
+        <h5>{{trainer.name}}</h5>
+    </div>
+    <div class="details" *ngIf="this.isActive">
+        <p>Age: {{trainer.age}}</p>
+        <p>Hobby: {{trainer.hobby}}</p>
+    </div>
+</div>

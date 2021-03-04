@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { element } from 'protractor';
-import { Team } from '../models/team';
-import { PokeapiService } from '../services/pokeapi.service';
-import { TeamService } from '../services/team.service';
-import { Trainer } from '../trainer/classes/trainer';
-import { TrainerService } from '../trainer/sevices/trainer.service';
+import { Team } from 'src/app/models/team';
+import { PokeapiService } from 'src/app/services/pokeapi.service';
+import { TeamService } from 'src/app/services/team.service';
+
 
 @Component({
   selector: 'app-team',

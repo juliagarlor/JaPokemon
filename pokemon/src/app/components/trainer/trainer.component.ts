@@ -1,7 +1,9 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { TrainerDTO } from '../classes/trainer-dto';
-import { TrainerService } from '../sevices/trainer.service';
+import { Trainer } from 'src/app/models/trainer';
+import { TrainerDTO } from 'src/app/models/trainer-dto';
+import { TrainerService } from 'src/app/services/trainer.service';
+
 
 @Component({
   selector: 'app-trainer',
@@ -15,6 +17,8 @@ export class TrainerComponent implements OnInit {
   hobby: string =  "";
   photo: string = "";
 
+  trainerList: Trainer[] = [];
+
   constructor(
     private trainerService: TrainerService
     ) { }
@@ -24,7 +28,7 @@ export class TrainerComponent implements OnInit {
   }
 
   createTrainer(): void {
-    const trainerDTO = new TrainerDTO(this.name, this.age, this.hobby, this.photo);
+    const trainerDTO = {name:this.name, age: this.age, hobby: this.hobby, photo: this.photo};
     console.log(trainerDTO);
     this.trainerService.createTrainer(trainerDTO).subscribe(dataResult => {
       this.getTrainerList()
@@ -35,10 +39,15 @@ export class TrainerComponent implements OnInit {
 
     this.trainerService.getTrainers()
     .subscribe( resp => {
-
-      console.log(resp);
-
+      this.trainerList = resp;
     } );
+  }
+
+  deleteTrainer(id: number): void {
+    this.trainerService.deleteTrainer(id)
+    .subscribe( resp => {
+      console.log(resp);
+    })
   }
 
 }

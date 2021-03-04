@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Trainer } from '../classes/trainer';
-import { TrainerDTO } from '../classes/trainer-dto';
+import { Trainer } from '../models/trainer';
+import { TrainerDTO } from '../models/trainer-dto';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,15 +22,18 @@ export class TrainerService {
 
      return this.http.get<Trainer[]>( url );
   }
-  getTrainerById(id: string): Observable<Trainer[]> {
-
-    const url = `${this.url}trainer/${id}`;
-
-    return this.http.get<Trainer[]>( url );
-  }
 
   createTrainer(trainerDTO: TrainerDTO): Observable<TrainerDTO> {
+
     const url = `${this.url}trainer`;
     return this.http.post<TrainerDTO>( url, trainerDTO );
+
+  }
+
+  deleteTrainer(id: number): Observable<TrainerDTO>{
+
+    const url = `${this.url}trainer/${id}`
+    return this.http.delete<TrainerDTO>(url)
+
   }
 }
