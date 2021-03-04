@@ -4,7 +4,6 @@
       <form class="form-inline" #form="ngForm" (ngSubmit)="addPokemon(pokemonToAdd)">
         <div class="form-group mb-2">
           <select class="custom-select" required [(ngModel)]="selectedTrainer" (ngModelChange)="showPokemons($event)" name="selectTrainer">
-            <option value="none" disabled selected>Select trainer</option>
             <option [ngValue]="team.teamId" *ngFor="let team of teamList; let i = index">{{team.trainerName}}</option>
           </select>
         </div>
