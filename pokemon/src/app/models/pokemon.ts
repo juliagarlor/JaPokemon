@@ -1,4 +1,5 @@
 export class Pokemon {
+
     constructor(
         private _pokedexEntry: number,
         private _generation: string,
@@ -115,4 +116,5 @@ export class Pokemon {
       set show(show: boolean) {
         this._show = show;
       }
+
 }

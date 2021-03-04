@@ -7,6 +7,8 @@ import java.util.*;
 
 public interface ITeamController {
     List<TeamDTO> getAllTeams();
+    TeamDTO getTeamById(Long id);
     TeamDTO addNewMate(Long teamId, Long pokemonId);
     TeamDTO removeMate(Long teamId, Long pokemonId);
+    List<TeamIdAndTrainerNameDTO> getTeamIdAndTrainerName();
 }

@@ -7,19 +7,19 @@ import { Observable } from 'rxjs';
 })
 export class PokeapiService {
 
+  url: string = 'https://pokeapi.co/api/v2/pokemon';
+
   constructor(
     private http: HttpClient,
   ) { }
 
   getPokemon(id: number): Observable<PokemonFromApi> {
-    return this.http.get<PokemonFromApi>('https://pokeapi.co/api/v2/pokemon/'+id);
+    const url: string = this.url + '/' + id
+    return this.http.get<PokemonFromApi>(url);
   }
   getPokemonByName(name: string): Observable<PokemonFromApi> {
-    return this.http.get<PokemonFromApi>('https://pokeapi.co/api/v2/pokemon/'+name);
-  }
-  // /add/{teamId}/team-mate
-  addPokemon(teamId: number, pokedexId: number): Observable<any> {
-    return this.http.put<any>('http://localhost:8080/add/' + teamId + '/team-mate', pokedexId);
+    const url = this.url + '/' + name;
+    return this.http.get<PokemonFromApi>(url );
   }
 }
 

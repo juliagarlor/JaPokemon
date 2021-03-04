@@ -67,6 +67,26 @@ public class TeamService implements ITeamService {
         return new TeamDTO(ourTeam);
     }
 
+    public List<TeamIdAndTrainerNameDTO> getTeamIdAndTrainerName() {
+        List<Team> teams = teamRepository.findAll();
+        List<TeamIdAndTrainerNameDTO> teamIdAndTrainerNameDTOS = new ArrayList<>();
+
+        for (Team team : teams) {
+            teamIdAndTrainerNameDTOS.add(new TeamIdAndTrainerNameDTO(team.getTeamId(), team.getTrainer().getName()));
+        }
+
+        return teamIdAndTrainerNameDTOS;
+    }
+
+    public TeamDTO getTeamById(Long id) {
+        Optional<Team> team = teamRepository.findById(id);
+        if (team.isPresent()) {
+            return new TeamDTO(team.get());
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Team with ID: " + id + " doesn't exists.");
+        }
+    }
+
     public Team checkTeam(Long teamId){
         Optional<Team> team = teamRepository.findById(teamId);
         if (team.isEmpty()){

@@ -17,7 +17,7 @@ export class TrainerComponent implements OnInit {
   hobby: string =  "";
   photo: string = "";
 
-  photoList: string[] = ["chica.gif", "científica.gif", "criadora.gif", "duque.gif", "entrenador-guay.gif", "entrenadora-guay.gif", "guitarrista.gif", "joven.gif", "karateka.gif", "luchadora.gif", "modelo.gif", "montañero.gif", "motorista.gif", "pescador.gif", "policía.gif", "calvo", "arlequín", "ciclista-chico", "ciclista-chica", "marquesa"];
+  photoList: string[] = ["chica.gif", "científica.gif", "criadora.gif", "duque.gif", "entrenador-guay.gif", "entrenadora-guay.gif", "guitarrista.gif", "joven.gif", "karateka.gif", "luchadora.gif", "modelo.gif", "montañero.gif", "motorista.gif", "pescador.gif", "policía.gif", "calvo.gif", "arlequín.gif", "ciclista-chico.gif", "ciclista-chica.gif", "marquesa.gif"];
 
   trainerList: Trainer[] = [];
 
@@ -51,6 +51,13 @@ export class TrainerComponent implements OnInit {
       console.log(resp);
     })
     this.trainerList.splice(index, 1);
+  }
+
+  normalize(text: string) {
+    return (text.charAt(0).toLocaleUpperCase()+text.slice(1,-4)).replace("-", " ");
+  }
+  setPhoto(photo: string) {
+    this.photo=photo;
   }
 
 }

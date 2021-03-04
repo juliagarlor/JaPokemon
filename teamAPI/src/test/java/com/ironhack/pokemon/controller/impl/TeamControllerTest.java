@@ -92,7 +92,7 @@ class TeamControllerTest {
 
         String body = objectMapper.writeValueAsString(goldeenId);
 
-        MvcResult result = mockMvc.perform(patch("/remove/"+ mistyTeamId + "/team-mate").content(body)
+        MvcResult result = mockMvc.perform(put("/remove/"+ mistyTeamId + "/team-mate").content(body)
                 .contentType(MediaType.APPLICATION_JSON)).andReturn();
         assertTrue(result.getResponse().getContentAsString().contains("Misty"));
         assertFalse(result.getResponse().getContentAsString().contains("Maya"));

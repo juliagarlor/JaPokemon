@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokeapiService } from 'src/app/services/pokeapi.service';
 
@@ -14,7 +14,8 @@ export class PokemonCardComponent implements OnInit {
   isActive: boolean = false;
   pokemon: Pokemon = new Pokemon(0,"-","-",["-","-"],0,0,0,0,0,0,[],0,0,"-","-",false);
   @Input() pokedexId: number = 0;
-  pokemonList: Pokemon[] = [];
+
+  @Output() removePokemonEvent = new EventEmitter();
 
   constructor(
     private pokeapiService: PokeapiService
@@ -80,6 +81,10 @@ export class PokemonCardComponent implements OnInit {
     } else {
       return "VIII";
     }
+  }
+
+  removePokemon(){
+    this.removePokemonEvent.emit();
   }
 
 }

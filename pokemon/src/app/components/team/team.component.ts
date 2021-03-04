@@ -12,11 +12,11 @@ import { TeamService } from 'src/app/services/team.service';
 })
 export class TeamComponent implements OnInit {
 
-  pokemonList: string[] = ["Pikachu"];
-  pokemonList2: number[] = [];
-  teamList: Team[] = [];
-  team: Team = this.teamList[0];
+  pokemonList: number[] = [];
+  pokemonIdList: number [] = [];
+  teamList: {teamId: number, trainerName: string}[] = [];
   pokemonToAdd: string = '';
+  teamId: number = 0;
 
   constructor(
     private teamService: TeamService,
@@ -24,37 +24,46 @@ export class TeamComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getTeams();
+    this.getTeamsIdAndTrainersName();
   }
 
-  getTeam(name: string){
-    this.teamService.getTeam(name).subscribe(dataResult => {
-      console.log(dataResult);
+  getTeam(teamId: number){
+    this.teamService.getTeam(teamId).subscribe(dataResult => {
+      dataResult.pokemonList.forEach(pokemon => this.pokemonList.push(pokemon.pokedexId));
+      dataResult.pokemonList.forEach(pokemon => this.pokemonIdList.push(pokemon.id));
     });
   }
 
-  getTeams(){
-    this.teamService.getTeams().subscribe(dataResult => {
-      console.log(dataResult);
-      this.teamList=dataResult;
+  getTeamsIdAndTrainersName(){
+    this.teamService.getTeamsIdAndTrainersName().subscribe(dataResult => {
+      this.teamList = dataResult;
     })
   }
 
-  showPokemons(team: Team) {
-this.getTeam(team.trainer.name);
-    this.team = team;
+  showPokemons(teamId: number) {
+    this.pokemonList=[];
+    this.getTeam(teamId);
+    this.teamId = teamId;
   }
 
   addPokemon(pokemonToAdd: string){
-    pokemonToAdd=pokemonToAdd.toLowerCase();
-    this.pokeapiService.getPokemonByName(pokemonToAdd).subscribe(dataResult => {
-      let pokedexId = dataResult.id;
-      let id = 1;
-      let pokemon = {id, pokedexId};
-      this.team.pokemonList.push(pokemon);
-      this.pokeapiService.addPokemon(this.team.id, pokedexId).subscribe(dataResult => {
+    if (this.pokemonList.length >= 7) {
+      alert("Team can't hold more than 7 pokemons.");
+    } else if (this.teamId === 0) {
+      alert("Select a trainer first.");
+    } else {
+      pokemonToAdd=pokemonToAdd.toLowerCase();
+      this.pokeapiService.getPokemonByName(pokemonToAdd).subscribe(dataResult => {
+        this.teamService.addPokemon(this.teamId, dataResult.id).subscribe();
+        this.pokemonList.push(dataResult.id);
+      }, error => {
+        alert(pokemonToAdd + " is not a valid Pokemon.");
       });
-      this.getTeams();
-    });
+    }
+  }
+
+  removePokemon(pokemonId: number, teamId: number, index: number) {
+    this.teamService.removePokemon(pokemonId, teamId).subscribe();
+    this.pokemonList.splice(index, 1);
   }
 }

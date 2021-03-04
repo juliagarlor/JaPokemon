@@ -2,25 +2,28 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6 offset-3">
-			<form (ngSubmit)="createTrainer()">
+			<form (ngSubmit)="createTrainer()" #form="ngForm" >
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="name">
+						<input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="name" required>
 					</div>
 					<div class="form-group col-md-6">
-						<input type="number" min="0" class="form-control" name="age" placeholder="Age" [(ngModel)]="age">
+						<input type="number" min="0" class="form-control" name="age" placeholder="Age" [(ngModel)]="age" required>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<input type="text" class="form-control" name="hobby" placeholder="Hobby" [(ngModel)]="hobby">
+						<input type="text" class="form-control" name="hobby" placeholder="Hobby" [(ngModel)]="hobby" required>
 					</div>
 					<div class="form-group col-md-6">
-						<input type="text" class="form-control" name="photo" placeholder="Photo" [(ngModel)]="photo">
+						<select class="form-control" required>
+							<option disabled selected>Photo</option>
+							<option *ngFor="let photo of photoList" (click)="setPhoto(photo)">{{normalize(photo)}}</option>
+						</select>
 					</div>
 				</div>
 				<div class="text-center">
-					<button type="submit" class="btn btn-outline-primary text-center">Create Trainer</button>
+					<button  [disabled]="form.invalid || photo === ''" type="submit" class="btn btn-outline-primary text-center">Create Trainer</button>
 				</div>
 			</form>
 		

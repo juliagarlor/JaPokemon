@@ -1,5 +1,6 @@
 .x {
-    align-self: flex-end;
+    top: 0px;
+    right: 0px;
     margin: 5px 10px;
     position: absolute;
 }
@@ -19,9 +20,14 @@
 }
 
 .card {
-    margin: 0 5px;
+    margin: 5px;
+    padding: 10px;
     width: 225px;
     border-radius: 5px;
+    min-height: 150px;
+    display: flex;
+    justify-content: flex-end;
+
 }
 
 .selected {
@@ -29,7 +35,7 @@
 }
 
 .trainer-picture {
-    max-width: 100px;
+    max-height: 80px;
 }
 
 

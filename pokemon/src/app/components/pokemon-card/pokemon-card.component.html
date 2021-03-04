@@ -1,6 +1,6 @@
 <div class="card" (mouseenter)="toggleActive()" (mouseleave)="toggleActive()" [ngClass]="{'selected': isActive}">
     <div class="default-view">
-        <p class="x">&#x2715;</p>
+        <p class="x" (click)="removePokemon()">&#x2715;</p>
         <img src={{pokemon.artwork}} class="artwork" />
         <p><span class="poketype" *ngFor="let type of pokemon.types; let i = index" 
                     [ngClass]="{'normal':type==='normal', 'fighting':type==='fighting',

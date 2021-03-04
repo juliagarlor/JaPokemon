@@ -36,7 +36,8 @@ INSERT INTO trainer(hobby, `name`,age,  photo) VALUES
 ('borrar tatuajes', 'Carolina',24, 'entrenadora-guay.gif'),
 ('recomendar series', 'Antonio',32, 'montañero.gif'),
 ('comprar y resolver cubos de rubik', 'Rubén',34, 'joven.gif'),
-('vaguear', 'Julia',28, 'guitarrista.gif');
+('vaguear', 'Julia',28, 'guitarrista.gif'),
+('Heráldica, Historia y Filatelia', 'Pepe', 75, 'duque.gif');
 
 INSERT INTO pokemon(pokedex_id) VALUES
 -- magikarp, 1
@@ -102,7 +103,23 @@ INSERT INTO pokemon(pokedex_id) VALUES
 -- ditto, 29
 (132),
 -- chandelure, 30
-(609)
+(609),
+
+-- Mewtwo, 31
+(150),
+-- Lugia, 32
+(248),
+-- Ampharos, 33
+(181),
+-- Deoxis, 34
+(386),
+-- Uxie, 35
+(480),
+-- Zapdos, 36
+(145),
+
+-- Klefki, 37
+(707)
 ;
 
 INSERT INTO team(trainer_id) VALUES
@@ -110,7 +127,8 @@ INSERT INTO team(trainer_id) VALUES
 (2),
 (3),
 (4),
-(5);
+(5),
+(6);
 
 INSERT INTO pokemon_in_team(team_id, pokemon_id) VALUES
 -- Aliany
@@ -118,6 +136,7 @@ INSERT INTO pokemon_in_team(team_id, pokemon_id) VALUES
 (1, 28),
 (1, 29),
 (1, 30),
+(1, 37),
 -- Carolina
 (2, 9),
 (2, 10),
@@ -147,8 +166,12 @@ INSERT INTO pokemon_in_team(team_id, pokemon_id) VALUES
 (5, 17),
 (5, 18),
 (5, 19),
-(5, 20)
+(5, 20),
+-- pepe
+(6,31),
+(6,32),
+(6,33),
+(6,34),
+(6,35),
+(6,36)
 ;
-
-
-SELECT * FROM trainer;

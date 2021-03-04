@@ -23,6 +23,12 @@ public class TeamController implements ITeamController {
         return teamService.getAllTeams();
     }
 
+    @GetMapping("/team/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public TeamDTO getTeamById(@PathVariable Long id) {
+        return teamService.getTeamById(id);
+    }
+
     @GetMapping("/team/trainer/{name}")
     @ResponseStatus(HttpStatus.OK)
     public List<TeamDTO> getTeamsByName(@PathVariable String name){
@@ -37,9 +43,15 @@ public class TeamController implements ITeamController {
     }
 
 //    remove a team mate from the team
-    @PatchMapping("/remove/{teamId}/team-mate")
+    @PutMapping("/remove/{teamId}/team-mate")
     @ResponseStatus(HttpStatus.OK)
     public TeamDTO removeMate(@PathVariable Long teamId, @RequestBody Long pokemonId){
         return teamService.removeMate(teamId, pokemonId);
+    }
+
+    @GetMapping("/teams/menu-list")
+    @ResponseStatus(HttpStatus.OK)
+    public List<TeamIdAndTrainerNameDTO> getTeamIdAndTrainerName() {
+        return teamService.getTeamIdAndTrainerName();
     }
 }

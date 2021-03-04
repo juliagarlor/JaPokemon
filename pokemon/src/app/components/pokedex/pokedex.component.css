@@ -9,6 +9,7 @@
     flex: 1;
 }
 .info-side {
+    padding-top: 20px;
     flex: 3;
     border:  1px solid #dee2e6;
 }

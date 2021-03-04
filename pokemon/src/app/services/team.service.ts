@@ -14,14 +14,23 @@ export class TeamService {
     private http: HttpClient,
   ) { }
 
-  getTeam(name: string): Observable<Team[]> {
-    const url = `${this.url}/team/trainer/${name}`;
-    return this.http.get<Team[]>(url);
+  getTeam(teamId: number): Observable<Team> {
+    const url = `${this.url}/team/${teamId}`;
+    return this.http.get<Team>(url);
   }
 
-  getTeams(): Observable<Team[]> {
-    const url = `${this.url}/teams`;
-    return this.http.get<Team[]>(url);
+  getTeamsIdAndTrainersName() : Observable<{teamId: number, trainerName: string}[]> {
+    const url = `${this.url}/teams/menu-list`;
+    return this.http.get<{teamId: number, trainerName: string}[]>(url);
   }
 
+  addPokemon(teamId: number, pokedexId: number): Observable<any> {
+    const url = `${this.url}/add/${teamId}/team-mate`;
+    return this.http.put<any>(url, pokedexId);
+  }
+
+  removePokemon(pokemonId: number, teamId: number): Observable<any> {
+    const url = `${this.url}/remove/${teamId}/team-mate`;
+    return this.http.put<any>(url, pokemonId);
+  }
 }

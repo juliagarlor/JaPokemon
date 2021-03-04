@@ -12,8 +12,9 @@ import { PokeapiService } from 'src/app/services/pokeapi.service';
 export class PokedexComponent implements OnInit {
 
   pokemonList: Pokemon[] = [];
-  pokemon: Pokemon = new Pokemon(0,"-","-",["-","-"],0,0,0,0,0,0,[],0,0,"-","-",false);
+  pokemon: Pokemon = new Pokemon(0,"I","MissingNo.",["-","-"],0,0,0,0,0,0,[],0,0,"-","assets/images/missingno.png",true);
   initialPokemon: number = 1;
+  aditionalDataList: {pokedexId: number, captureRate: number, description: string, genera: string, habitat: string}[] = [];
 
   constructor(
     private pokeapiService: PokeapiService
