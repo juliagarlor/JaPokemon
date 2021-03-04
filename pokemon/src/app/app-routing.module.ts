@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: "trainer",
     component: TrainerComponent
+  },
+  {
+    path: "**",
+    component: PokedexComponent
   }
 ];
 

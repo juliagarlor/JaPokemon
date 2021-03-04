@@ -24,9 +24,11 @@
 				</div>
 			</form>
 		
-			{{name}} {{age}} {{hobby}} {{photo}}
-		
-			<app-trainer-cart></app-trainer-cart>
+
+			<div class="team">
+				<app-trainer-cart *ngFor="let trainer of trainerList" [trainer] = "trainer" class="trainer-margin" (deleteTrainerEvent) = "deleteTrainer($event)"></app-trainer-cart>
+			</div>
+			
 		
 		</div>
 	</div>

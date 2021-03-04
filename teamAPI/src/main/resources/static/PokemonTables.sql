@@ -1,5 +1,3 @@
-DROP SCHEMA IF EXISTS pokemon_test;
-CREATE SCHEMA pokemon_test;
 DROP SCHEMA IF EXISTS pokemon;
 CREATE SCHEMA pokemon;
 USE pokemon;
@@ -12,9 +10,9 @@ PRIMARY KEY(id)
 
 CREATE TABLE trainer(
 id BIGINT NOT NULL AUTO_INCREMENT,
-name VARCHAR(255),
-age INT,
 hobby VARCHAR(255),
+`name` VARCHAR(255),
+age int,
 photo VARCHAR(255),
 PRIMARY KEY(id)
 );
@@ -33,12 +31,12 @@ FOREIGN KEY(team_id) REFERENCES team(team_id),
 FOREIGN KEY(pokemon_id) REFERENCES pokemon(id)
 );
 
-INSERT INTO trainer(name, age, hobby,  photo) VALUES
-('Aliany', 35,'ver Pokemon (para dejar de escribir Poquemon y Picachu)', 'aliany.png'),
-('Carolina', 24,'borrar tatuajes', 'carolina.png'),
-('Antonio', 32,'recomendar series', 'antonio.png'),
-('Rubén', 34, 'comprar y resolver cubos de rubik', 'ruben.png'),
-('Julia', 25,'vaguear', 'julia.png');
+INSERT INTO trainer(hobby, `name`,age,  photo) VALUES
+('ver Pokemon', 'Aliany',35, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png'),
+('borrar tatuajes', 'Carolina',24, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png'),
+('recomendar series', 'Antonio',32, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png'),
+('comprar y resolver cubos de rubik', 'Rubén',34, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/320.png'),
+('vaguear', 'julia',28, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon240.png');
 
 INSERT INTO pokemon(pokedex_id) VALUES
 -- magikarp, 1
