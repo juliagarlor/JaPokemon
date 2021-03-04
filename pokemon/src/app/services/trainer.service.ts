@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Trainer } from '../classes/trainer';
-import { TrainerDTO } from '../classes/trainer-dto';
+import { Trainer } from '../models/trainer';
+import { TrainerDTO } from '../models/trainer-dto';
+
 
 @Injectable({
   providedIn: 'root'

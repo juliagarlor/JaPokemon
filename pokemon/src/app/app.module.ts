@@ -5,13 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { TrainerComponent } from './trainer/component/trainer.component';
-import { TrainerCartComponent } from './trainer-cart/trainer-cart.component';
-import { TeamComponent } from './team/team.component';
-import { PokedexComponent } from './pokedex/pokedex.component';
-import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { TrainerCartComponent } from './components/trainer-cart/trainer-cart.component';
+import { TrainerComponent } from './components/trainer/trainer.component';
+import { TeamComponent } from './components/team/team.component';
+import { PokedexComponent } from './components/pokedex/pokedex.component';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,8 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { TrainerDTO } from '../classes/trainer-dto';
-import { TrainerService } from '../sevices/trainer.service';
+import { TrainerDTO } from 'src/app/models/trainer-dto';
+import { TrainerService } from 'src/app/services/trainer.service';
+
 
 @Component({
   selector: 'app-trainer',

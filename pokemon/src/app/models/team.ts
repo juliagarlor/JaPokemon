@@ -1,4 +1,6 @@
-import { Trainer } from "../trainer/classes/trainer";
+import { Trainer } from './trainer';
+
+
 
 export class Team {
     constructor(
