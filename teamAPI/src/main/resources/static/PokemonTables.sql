@@ -95,7 +95,14 @@ INSERT INTO pokemon(pokedex_id) VALUES
 -- mew, 26
 (151),
 -- haunter, 27
-(93)
+(93),
+
+-- charmander, 28
+(4),
+-- ditto, 29
+(132),
+-- chandelure, 30
+(609)
 ;
 
 INSERT INTO team(trainer_id) VALUES
@@ -108,9 +115,9 @@ INSERT INTO team(trainer_id) VALUES
 INSERT INTO pokemon_in_team(team_id, pokemon_id) VALUES
 -- Aliany
 (1, 1),
-(1, 9),
-(1, 21),
-(1, 15),
+(1, 28),
+(1, 29),
+(1, 30),
 -- Carolina
 (2, 9),
 (2, 10),
