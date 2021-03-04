@@ -32,11 +32,11 @@ FOREIGN KEY(pokemon_id) REFERENCES pokemon(id)
 );
 
 INSERT INTO trainer(hobby, `name`,age,  photo) VALUES
-('ver Pokemon', 'Aliany',35, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png'),
-('borrar tatuajes', 'Carolina',24, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png'),
-('recomendar series', 'Antonio',32, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png'),
-('comprar y resolver cubos de rubik', 'Rubén',34, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/320.png'),
-('vaguear', 'julia',28, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon240.png');
+('ver Pokemon', 'Aliany',35, 'modelo.gif'),
+('borrar tatuajes', 'Carolina',24, 'entrenadora-guay.gif'),
+('recomendar series', 'Antonio',32, 'montañero.gif'),
+('comprar y resolver cubos de rubik', 'Rubén',34, 'joven.gif'),
+('vaguear', 'Julia',28, 'guitarrista.gif');
 
 INSERT INTO pokemon(pokedex_id) VALUES
 -- magikarp, 1
@@ -149,3 +149,6 @@ INSERT INTO pokemon_in_team(team_id, pokemon_id) VALUES
 (5, 19),
 (5, 20)
 ;
+
+
+SELECT * FROM trainer;

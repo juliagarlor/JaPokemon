@@ -17,6 +17,8 @@ export class TrainerComponent implements OnInit {
   hobby: string =  "";
   photo: string = "";
 
+  photoList: string[] = ["chica.gif", "científica.gif", "criadora.gif", "duque.gif", "entrenador-guay.gif", "entrenadora-guay.gif", "guitarrista.gif", "joven.gif", "karateka.gif", "luchadora.gif", "modelo.gif", "montañero.gif", "motorista.gif", "pescador.gif", "policía.gif", "calvo", "arlequín", "ciclista-chico", "ciclista-chica", "marquesa"];
+
   trainerList: Trainer[] = [];
 
   constructor(
