@@ -71,5 +71,11 @@ DELETE | localhost:8080/trainer/{id} | Delete a trainer and automatically delete
 Case Diagram
 
 ![Class Diagram](diagrams/diagram-use-case.png)
+
+# Screenshots
+![Screenshot 1](screenshots/1.png)
+![Screenshot 2](screenshots/2.png)
+![Screenshot 3](screenshots/3.png)
+
 ---
 ⌨️ developed with ❤️ by Antonio Navarro, Carolina Siguiri, Julia Garcia, Rubén Navarro, Aliany Crespo 😊
