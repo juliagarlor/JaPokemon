@@ -1,6 +1,4 @@
 
-![Alt text](pokemon/src/assets/logo.png?raw=true "Pokemon")
----
 
 # JaPoKemon 
 For this project, we created a Pokémon application, in this application we have 3 sections, Pokedex, Teams and Trainers. In Pokedex we are presented with a paginated list of all the names of the pokemons, and clicking on a name shows a detailed view of the pokedex with an image and statistics.
@@ -10,7 +8,7 @@ In Trainers we can create and eliminate pokemon trainers. In Teams, we can selec
 
 
 ## Starting 🚀
----
+
 
 This project has a backend application developed in Java with Spring Boot and a frontend application developed in Angular with Boostraps. Both applications communicate with each other through an API.
 
@@ -52,7 +50,10 @@ ng serve
 http://localhost:4200/
 ```
 
+
 _Ready! you can now have fun on your computer with JaPokemon._
+
+
 
 ## Routes ✒️
 
