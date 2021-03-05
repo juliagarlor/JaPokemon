@@ -16,7 +16,7 @@ This project has a backend application developed in Java with Spring Boot and a 
 ### Installation 🔧
 ---
 
-_These instructions will allow you to get a copy of the project running on your local machine.
+These instructions will allow you to get a copy of the project running on your local machine.
 
 1. Download the project from the repository.
 
@@ -68,7 +68,6 @@ DELETE | localhost:8080/trainer/{id} | Delete a trainer and automatically delete
 
 
 # Diagrams
----
 Case Diagram
 
 ![Class Diagram](diagrams/diagram-use-case.png)
