@@ -4,7 +4,7 @@
 For this project, we created a Pokémon application, in this application we have 3 sections, Pokedex, Teams and Trainers. In Pokedex we are presented with a paginated list of all the names of the pokemons, and clicking on a name shows a detailed view of the pokedex with an image and statistics.
 In Trainers we can create and eliminate pokemon trainers. In Teams, we can select a trainer and see their pokemon team, add and / or remove pokemons to that team.
 
- `--Have fun creating your pokemon team to accompany you on this adventure! _`
+ `Have fun creating your pokemon team to accompany you on this adventure!`
 
 
 ## Starting 🚀
